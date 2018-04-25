@@ -10,7 +10,6 @@
 * on the command line (to stderr).
 */
 
-#include <termcap.h>  /* tgetent, tgetnum */
 #include <assert.h>
 #include <limits.h>
 #include "progressbar.h"
@@ -114,12 +113,7 @@ static int progressbar_max(int x, int y) {
 }
 
 static unsigned int get_screen_width(void) {
-  char termbuf[2048];
-  if (tgetent(termbuf, getenv("TERM")) >= 0) {
-    return tgetnum("co") /* -2 */;
-  } else {
     return DEFAULT_SCREEN_WIDTH;
-  }
 }
 
 static int progressbar_bar_width(int screen_width, int label_length) {

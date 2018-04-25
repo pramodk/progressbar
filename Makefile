@@ -7,7 +7,7 @@ INCLUDE=include/progressbar
 TEST=test
 CFLAGS += -std=c99 -I$(INCLUDE) -Wimplicit-function-declaration -Wall -Wextra -pedantic
 CFLAGS_DEBUG = -g -O0
-LDLIBS = -lncurses
+LDLIBS =
 
 all: $(EXECUTABLE) $(SHARED_LIB) $(STATIC_LIB)
 
